@@ -8,7 +8,9 @@ from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
 
+    #底盘控制器的串口设备
     port_name_arg = LaunchConfiguration('port_name',default='/dev/agvpro_controller')
+    #命名空间参数，用于多机器人
     namespace = LaunchConfiguration('namespace', default='')
 
     urdf_file = os.path.join(
@@ -37,6 +39,7 @@ def generate_launch_description():
 
         PushRosNamespace(namespace),
 
+        #底盘控制节点
         Node(
             package='agv_pro_base',
             executable='agv_pro_node',

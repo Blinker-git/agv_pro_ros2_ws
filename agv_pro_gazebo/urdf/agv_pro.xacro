@@ -86,7 +86,9 @@
 
   <!-- Include ros2_controller.xacro to define controllers -->
   <xacro:include filename="$(find agv_pro_gazebo)/urdf/parts/gazebo_control_plugin.xacro"/>
+  <xacro:include filename="$(find agv_pro_gazebo)/urdf/parts/gazebo_sensor_plugin.xacro"/>
   <xacro:include filename="$(find agv_pro_gazebo)/urdf/ros2_controller.xacro"/>
   <xacro:ros2_controller/>
+  <xacro:gazebo_sensor_plugin />
   <xacro:gazebo_control_plugin/>
 </robot>
